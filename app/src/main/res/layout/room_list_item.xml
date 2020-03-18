@@ -24,14 +24,16 @@
             android:layout_marginLeft="10dp">
 
         <TextView
+            android:id="@+id/priceTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:text="2억 8,500만원"
             android:textStyle="bold"
-            android:textColor="F07211"/>
+            android:textColor="#F07211"/>
 
         <TextView
+            android:id="@+id/addressAndFloorTxt"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,6 +41,7 @@
             android:textColor="#000000" />
 
         <TextView
+            android:id="@+id/descTxt"
             android:layout_marginTop="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
