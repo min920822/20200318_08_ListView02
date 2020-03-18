@@ -41,7 +41,7 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         Room data = mList.get(position);
 
         TextView priceTxt = row.findViewById(R.id.priceTxt);
-        TextView addressAndFloorTx = row.findViewById(R.id.priceTxt);
+        TextView addressAndFloorTxt = row.findViewById(R.id.priceTxt);
         TextView descTxt = row.findViewById(R.id.priceTxt);
 
 //        가격설정. => setText에는 int값 넣지 말자.
@@ -57,6 +57,22 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         else{
             priceTxt.setText(String.format("%,d",data.getPrice()));
         }
+        String floorStr = "";
+//        층 > 0, 층 == 0, 그외 (층 <0 )
+
+        if (data.getFloor() > 0){
+            floorStr = String.format("%d층",data.getFloor());
+        }
+        else if (data.getFloor() == 0){
+
+            floorStr = "반지하";
+        }
+        else{
+
+            floorStr = String.format("지하 %d층",data.getFloor()*-1);
+        }
+
+        addressAndFloorTxt.setText(String.format("%s, %s",data.getAddress(),data.getFloor()));
 
         return row;
 
