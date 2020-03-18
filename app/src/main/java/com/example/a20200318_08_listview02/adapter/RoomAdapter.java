@@ -46,17 +46,19 @@ public class RoomAdapter extends ArrayAdapter<Room> {
 
 //        가격설정. => setText에는 int값 넣지 말자.
 
-        if ( data.getPrice()>=10000){
-//            ?억 %,d로 가공
-//            ?억 %,d
-            int billion = data.getPrice() / 10000;
-            int thousand = data.getPrice() % 10000;
+//        if ( data.getPrice()>=10000){
+////            ?억 %,d로 가공
+////            ?억 %,d
+//            int billion = data.getPrice() / 10000;
+//            int thousand = data.getPrice() % 10000;
+//
+//            priceTxt.setText(String.format("%d억 %,d",billion,thousand));
+//        }
+//        else{
+//            priceTxt.setText(String.format("%,d",data.getPrice()));
+//        }
+        priceTxt.setText(data.getFormattedPrice());
 
-            priceTxt.setText(String.format("%d억 %,d",billion,thousand));
-        }
-        else{
-            priceTxt.setText(String.format("%,d",data.getPrice()));
-        }
         String floorStr = "";
 //        층 > 0, 층 == 0, 그외 (층 <0 )
 
@@ -72,7 +74,9 @@ public class RoomAdapter extends ArrayAdapter<Room> {
             floorStr = String.format("지하 %d층",data.getFloor()*-1);
         }
 
-        addressAndFloorTxt.setText(String.format("%s, %s",data.getAddress(),data.getFloor()));
+        addressAndFloorTxt.setText(String.format("%s, %s",data.getAddress(),floorStr));
+
+        descTxt.setText(data.getDescription());
 
         return row;
 
