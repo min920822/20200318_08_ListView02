@@ -41,8 +41,8 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         Room data = mList.get(position);
 
         TextView priceTxt = row.findViewById(R.id.priceTxt);
-        TextView addressAndFloorTxt = row.findViewById(R.id.priceTxt);
-        TextView descTxt = row.findViewById(R.id.priceTxt);
+        TextView addressAndFloorTxt = row.findViewById(R.id.addressAndFloorTxt);
+        TextView descTxt = row.findViewById(R.id.descTxt);
 
 //        가격설정. => setText에는 int값 넣지 말자.
 
